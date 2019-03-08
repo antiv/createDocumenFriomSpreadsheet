@@ -1,3 +1,11 @@
+function onOpen() {
+  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
+      .createMenu('Create Documents')
+      .addItem('Create Invoice', 'createInvoice')
+      .addItem('Create Workorder', 'createWorkorder')
+      .addToUi();
+}
+
 function createInvoice() {
   createDocument("10l3CVICmDVEJ01MkNhKyL9C2SWcpfVNB5_x7wRKE8Wk", "Invoice")
 }
@@ -9,7 +17,7 @@ function createWorkorder() {
 function createDocument(templateId, title) {
   var ui = SpreadsheetApp.getUi(); // Same variations.
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var headers = sheet.getRange('A3:I3').getValues()
+  var headers = sheet.getRange('A1:I1').getValues()
   var row = sheet.getActiveCell().getRow()
   var rowData = sheet.getRange('A'+row+':I'+row).getValues()
   
