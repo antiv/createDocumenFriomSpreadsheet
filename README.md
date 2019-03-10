@@ -1,4 +1,4 @@
-# createDocumenFriomSpreadsheet
+# createDocumenFromSpreadsheet
 Create Document from template, and fill data with data from spreadsheet
 
 ## Create a Google Docs Template
